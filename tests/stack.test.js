@@ -18,13 +18,22 @@ test('peek on stack with two or more elements returns the top element', () => {
     expect(stack.peek()).toBe(42);
 });
 
-test('push() should add an element to the stack', () => {
+test('push() should add elements to the stack in the correct order', () => {
+    stack.push(1);
+    stack.push(2);
     stack.push(3);
     expect(stack.peek()).toBe(3);
 });
 
-test('pop() should remove and return the top element from the stack', () => {
-    const poppedElement = stack.pop();
-    expect(poppedElement).toBe(2);
-    expect(stack.peek()).toBe(1);
+test('pop() should return undefined on an empty stack', () => {
+    expect(stack.pop()).toBeUndefined();
+});
+
+test('pop() should remove and return elements from the stack in the correct order', () => {
+    stack.push(1);
+    stack.push(2);
+    stack.push(3);
+    expect(stack.pop()).toBe(3);
+    expect(stack.pop()).toBe(2);
+    expect(stack.pop()).toBe(1);
 });
