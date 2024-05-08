@@ -25,10 +25,14 @@ test('push() should add elements to the stack in the correct order', () => {
     expect(stack.peek()).toBe(3);
 });
 
+beforeEach(() => {
+    stack = [];
+});
+
 test('pop() should return undefined on an empty stack', () => {
     console.log("Stack before pop:", stack);
     expect(stack.pop()).toBeUndefined();
-});
+})
 
 test('pop() should remove and return elements from the stack in the correct order', () => {
     stack.push(1);
