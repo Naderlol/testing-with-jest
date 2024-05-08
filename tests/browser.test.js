@@ -32,3 +32,18 @@ describe('Clicking "Pusha till stacken"', () => {
 		await alert.accept();
 	});
 });
+
+test('Knappen för att pusha till stacken ska lägga till ett element på stacken och uppdatera gränssnittet korrekt', async () => {
+    // Klicka på knappen för att pusha till stacken
+    let pushButton = await driver.findElement(By.id('push'));
+    await pushButton.click();
+
+    // Ange ett element i prompt-rutan
+    let prompt = await driver.switchTo().alert();
+    await prompt.sendKeys("Nycklar");
+    await prompt.accept();
+
+    // Kontrollera att det tillagda elementet visas på stacken
+    let topOfStack = await driver.findElement(By.id('top_of_stack')).getText();
+    expect(topOfStack).toEqual("Nycklar");
+});
