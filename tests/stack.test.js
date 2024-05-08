@@ -26,7 +26,8 @@ test('push() should add elements to the stack in the correct order', () => {
 });
 
 beforeEach(() => {
-    stack = [];
+    //Reset the stack before each test
+    stack.resetStack();
 });
 
 test('pop() should return undefined on an empty stack', () => {

@@ -2,6 +2,10 @@ const _ = require('underscore');
 
 let stack = [];
 
+function resetStack() {
+    stack = [];
+}
+
 // Lägger ett element överst i stacken
 exports.push = function (x) {
     stack.push(x);
@@ -21,3 +25,4 @@ exports.peek = function () {
     return _.last(stack);
 }
 
+exports.resetStack = resetStack;
