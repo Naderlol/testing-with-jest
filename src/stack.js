@@ -16,3 +16,12 @@ exports.pop = function () {
 exports.peek = function () {
     return _.last(stack);
 }
+
+// Returnerar det översta elementet i stacken och tar bort det
+exports.pop = function () {
+    if (stack.length === 0) {
+        return undefined;
+    } else {
+        return stack.pop();
+    }
+}
