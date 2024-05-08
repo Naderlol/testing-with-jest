@@ -31,7 +31,6 @@ beforeEach(() => {
 });
 
 test('pop() should return undefined on an empty stack', () => {
-    console.log("Stack before pop:", stack);
     expect(stack.pop()).toBeUndefined();
 })
 
