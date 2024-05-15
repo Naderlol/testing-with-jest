@@ -44,6 +44,6 @@ test('Knappen för att pusha till stacken ska lägga till ett element på stacke
     await prompt.accept();
 
     // Kontrollera att det tillagda elementet visas på stacken
-    let topOfStack =  driver.findElement(By.id('')).getText();
-    expect(topOfStack).toEqual("");
+    let topOfStack = await driver.findElement(By.id('top_of_stack')).getText();
+    expect(topOfStack).toEqual("Nycklar");
 });
